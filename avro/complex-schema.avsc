@@ -1,0 +1,63 @@
+{
+  "type": "record", 
+  "name": "somename",
+  "namespace": "some.namespace",
+  "fields": 
+            [
+			  {
+			    "name": "field1",
+				"type": "string"
+			  },
+			  {
+			    "name": "field2",
+				"type": "string"
+			  },
+			  {
+			    "name": "field3",
+				"type": "string"
+			  },
+			  {
+			    "name": "field4",
+				"type": ["null", "string"]
+			  },
+			  {
+			    "name": "params", 
+				"type": 
+				        [
+						  {
+						    "type": "map", 
+						    "values": "string"
+						  },
+						  "null"
+						]
+			  },
+			  {
+			    "name": "field_bool",
+				"type": "boolean",
+                "default": "True"
+			  },
+			  {
+			    "name": "field_amt",
+				"type": ["null", "long"]
+			  },
+			  {
+			    "name": "field_dttm1",
+				"type": 
+				        [
+				          {
+						    "type": "long",
+						    "logicalType": "timestamp-millis"
+						  },
+						  "null"
+						]
+			  },
+			  {
+			    "name": "field_dttm2",
+				"type": 
+				        {
+						  "type": "long",
+						  "logicalType": "timestamp-millis"
+						}
+			  }
+			]
+}
