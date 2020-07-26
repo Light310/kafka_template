@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 
 from confluent_kafka.schema_registry.schema_registry_client import Schema, SchemaRegistryClient
 
-from load_avro_schema_from_file import load_avro_schema_from_file_plain_text
+from load_avro_schema import load_avro_schema_from_file_plain_text
 from parse_config import parse_kafka_config
 
 

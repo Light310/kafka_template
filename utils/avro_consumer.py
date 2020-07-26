@@ -5,7 +5,7 @@ from confluent_kafka import Consumer, KafkaError
 from avro.io import DatumReader, BinaryDecoder
 import avro.schema
 
-from utils.load_avro_schema_from_registry import load_avro_schema_from_registry
+from utils.load_avro_schema import load_avro_schema_from_registry
 from utils.parse_config import parse_kafka_config
 
 
@@ -73,18 +73,3 @@ class MyAvroConsumer():
         self.consumer.assign([TopicPartition(self.topic, 0)])
         for msg in self.consume(1.0):
             print(msg)
-
-"""
-import json
-import datetime
-
-def process_msg(msg):
-    print(msg['field1'])
-    date = datetime.datetime.fromtimestamp(msg['field_dttm2'])
-    print(date)
-    print(msg['params'])
-    print(msg['field_bool'])
-
-AC = MyAvroConsumer('test_complex_schema_4', 'create-user-request-2')
-AC.confluent_consumer(process_msg)
-"""
